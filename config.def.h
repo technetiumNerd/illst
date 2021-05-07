@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
-static int borderpx = 2;
+static char *font = "iosevka term:pixelsize=14:antialias=true:autohint=true";
+static int borderpx = 8;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -16,7 +16,7 @@ static int borderpx = 2;
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
-static char *shell = "/bin/sh";
+static char *shell = "/bin/zsh";
 char *utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
 char *scroll = NULL;
@@ -94,7 +94,7 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.8;
+float alpha = 0.7;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
@@ -121,19 +121,19 @@ static const char *colorname[] = {
   /* special colors */
   [256] = "#282a36", /* background */
   [257] = "#f8f8f2", /* foreground */
-	"#555555",
-	"black",
+  [258] = "#555555",
+  [259] = "black",
 };
 
-};
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor
  */
 unsigned int defaultfg = 257;
-unsigned int defaultbg = 256;
+unsigned int defaultbg = 259;
 static unsigned int defaultcs = 257;
+static unsigned int defaultrcs = 256;
 
 /*
  * Colors used, when the specific fg == defaultfg. So in reverse mode this
