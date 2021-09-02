@@ -98,26 +98,28 @@ float alpha = 0.7;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-  /* solarized dark */
-  /* 8 normal colors */
-   "#073642",  /*  0: black    */
-   "#dc322f",  /*  1: red      */
-   "#859900",  /*  2: green    */
-   "#b58900",  /*  3: yellow   */
-   "#268bd2",  /*  4: blue     */
-   "#d33682",  /*  5: magenta  */
-   "#2aa198",  /*  6: cyan     */
-   "#eee8d5",  /*  7: white    */
-  /* 8 bright colors */
-   "#002b36",  /*  8: brblack  */
-   "#cb4b16",  /*  9: brred    */
-   "#586e75",  /* 10: brgreen  */
-   "#657b83",  /* 11: bryellow */
-   "#839496",  /* 12: brblue   */
-   "#6c71c4",  /* 13: brmagenta*/
-   "#93a1a1",  /* 14: brcyan   */
-   "#fdf6e3",  /* 15: brwhite  */
-   "black",    /* 16: black    */
+    /* gruvbox */
+    /* 8 normal colors */
+    [0] = "#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
+    [1] = "#cc241d", /* red     */
+    [2] = "#98971a", /* green   */
+    [3] = "#d79921", /* yellow  */
+    [4] = "#458588", /* blue    */
+    [5] = "#b16286", /* magenta */
+    [6] = "#689d6a", /* cyan    */
+    [7] = "#a89984", /* white   */
+    
+    /* 8 bright colors */
+    [8]  = "#928374", /* black   */
+    [9]  = "#fb4934", /* red     */
+    [10] = "#b8bb26", /* green   */
+    [11] = "#fabd2f", /* yellow  */
+    [12] = "#83a598", /* blue    */
+    [13] = "#d3869b", /* magenta */
+    [14] = "#8ec07c", /* cyan    */
+    [15] = "#ebdbb2", /* white   */
+
+    [16] = "#000000", /* black bg */
 };
 
 
@@ -125,10 +127,10 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor
  */
-unsigned int defaultfg = 12;
+unsigned int defaultfg = 15;
 unsigned int defaultbg = 16;
-static unsigned int defaultcs = 14;
-static unsigned int defaultrcs = 15;
+static unsigned int defaultcs = 15;
+static unsigned int defaultrcs = 257;
 
 /*
  * Colors used, when the specific fg == defaultfg. So in reverse mode this
